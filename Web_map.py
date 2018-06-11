@@ -22,7 +22,8 @@ def color_produce(elevation):
 
 
 for lt,ln ,el in zip(latitude,longitude,elev):
-    fg.add_child(folium.Marker(location=[lt,ln],popup=folium.Popup(str(el)+" mtr",parse_html=True),icon=folium.Icon(color=color_produce(el))))
+    fg.add_child(folium.CircleMarker(location=[lt,ln],popup=folium.Popup(str(el)+" mtr",parse_html=True),
+                               fill_color=color_produce(el),fill= True ,color='grey',fill_capacity=0.7))
 
 map.add_child(fg)
 
