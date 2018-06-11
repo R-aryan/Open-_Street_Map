@@ -12,9 +12,17 @@ latitude= list(data['LAT'])
 longitude= list(data['LON'])
 elev=list(data['ELEV'])
 
+def color_produce(elevation):
+    if elevation < 1000:
+        return 'green'
+    elif 1000 <= elevation < 3000:
+        return 'orange'
+    else:
+        return 'red'
+
 
 for lt,ln ,el in zip(latitude,longitude,elev):
-    fg.add_child(folium.Marker(location=[lt,ln],popup=folium.Popup(str(el)+" mtr",parse_html=True),icon=folium.Icon(color='green')))
+    fg.add_child(folium.Marker(location=[lt,ln],popup=folium.Popup(str(el)+" mtr",parse_html=True),icon=folium.Icon(color=color_produce(el))))
 
 map.add_child(fg)
 
