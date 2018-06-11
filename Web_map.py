@@ -10,9 +10,11 @@ data = pd.read_csv("Volcanoes.txt")
 #print(data)
 latitude= list(data['LAT'])
 longitude= list(data['LON'])
+elev=list(data['ELEV'])
 
-for lt,ln in zip(latitude,longitude):
-    fg.add_child(folium.Marker(location=[lt,ln],popup="Hi I am marker",icon=folium.Icon(color='green')))
+
+for lt,ln ,el in zip(latitude,longitude,elev):
+    fg.add_child(folium.Marker(location=[lt,ln],popup=folium.Popup(str(el)+"mtr",parse_html=True),icon=folium.Icon(color='green')))
 
 map.add_child(fg)
 
