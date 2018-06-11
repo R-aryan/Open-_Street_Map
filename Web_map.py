@@ -14,7 +14,7 @@ elev=list(data['ELEV'])
 
 
 for lt,ln ,el in zip(latitude,longitude,elev):
-    fg.add_child(folium.Marker(location=[lt,ln],popup=folium.Popup(str(el)+"mtr",parse_html=True),icon=folium.Icon(color='green')))
+    fg.add_child(folium.Marker(location=[lt,ln],popup=folium.Popup(str(el)+" mtr",parse_html=True),icon=folium.Icon(color='green')))
 
 map.add_child(fg)
 
