@@ -24,6 +24,12 @@ def color_produce(elevation):
 for lt,ln ,el in zip(latitude,longitude,elev):
     fg.add_child(folium.CircleMarker(location=[lt,ln],popup=folium.Popup(str(el)+" mtr",parse_html=True),
                                fill_color=color_produce(el),fill= True ,color='grey',fill_capacity=0.7))
+    
+#points for locations
+#lines for lines
+#polygons for areas
+
+fg.add_child(folium.GeoJson(data=(open('world.json','r',encoding='utf-8-sig').read())))
 
 map.add_child(fg)
 
