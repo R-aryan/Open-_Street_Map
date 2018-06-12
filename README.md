@@ -3,3 +3,5 @@ My first web map built using folium to understand the basics of web mapping usin
 It uses predefined data for volcanoes and population.
 It's a basic map which uses multiple layers.
 
+<ul>Points in the map denotes location</ul> 
+
